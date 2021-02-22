@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-claim
+  labels:     
+    app: tiers
+    tier: frontend
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+---  
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-claim
+  labels:
+    app: tiers
+    tier: backend
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+
